@@ -20,6 +20,7 @@ type User struct {
 
 // Prepare will call the methods to validate and format the user struct  received
 func (user *User) Prepare() error {
+
 	if err := user.validate(); err != nil {
 		return err
 	}
