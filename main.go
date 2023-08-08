@@ -10,7 +10,7 @@ import (
 
 func main() {
 	config.Init()
-	fmt.Println("Running API...")
+	fmt.Println("Running API on port", config.Port)
 
 	r := router.Run()
 
