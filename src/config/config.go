@@ -15,6 +15,9 @@ var (
 
 	// Port where the API will run
 	Port = 0
+
+	// SecretKey is a key that will be used to generate JWT tokens
+	SecretKey []byte
 )
 
 // Init will initialize environment variables
@@ -31,4 +34,6 @@ func Init() {
 	}
 
 	StringConnectionDB = fmt.Sprintf("%s:%s@/%s?charset=utf8&parseTime=true&loc=Local", os.Getenv("DB_USER"), os.Getenv("DB_PASSWORD"), os.Getenv("DB_NAME"))
+
+	SecretKey = []byte(os.Getenv("SECRET_KEY"))
 }

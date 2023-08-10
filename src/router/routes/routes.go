@@ -16,6 +16,7 @@ type Routes struct {
 // SetupRoutes is responsible for setting up the routes in the router, it receives a router and returns a router
 func SetupRoutes(r *mux.Router) *mux.Router {
 	routes := userRoutes
+	routes = append(routes, loginRoute)
 
 	for _, route := range routes {
 		r.HandleFunc(route.URI, route.Function).Methods(route.Method)
